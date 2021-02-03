@@ -41,6 +41,11 @@ app.get('/api/candidate/:id', (req, res) => {
 			return;
 		}
 
+		if (!row) {
+			res.status(404).json({ message: 'No data' });
+			return;
+		}
+
 		res.json({
 			message: 'success',
 			data: row,
